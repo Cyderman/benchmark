@@ -5,30 +5,26 @@ import pandas as pd
 lookup_table = pd.read_csv("lookup_table.csv")
 
 # Step 2: Streamlit App
-st.title("PFL Horse Racing Performance Evaluation")
-
-st.subheader("Input your data")
-st.write("Select the conditions of a previous race and your horse's finish time to see how good it was.")
-
+st.title("Horse Racing Performance Evaluation")
 
 # Grade selection
-grade = st.radio("Select Grade:", options=['A-', 'A', 'A+', 'S-', 'S', 'S+', 'SS-'])
+grade = st.selectbox("Select Grade:", options=['A-', 'A', 'A+', 'S-', 'S', 'S+', 'SS-'])
 
 # Direction selection
-direction = st.radio("Select Direction:", options=['Left', 'Right'])
+direction = st.selectbox("Select Direction:", options=['Left', 'Right'])
 direction_value = f"{direction}Turning"
 
 # Surface selection
-surface = st.radio("Select Surface:", options=['Dirt', 'Turf'])
+surface = st.selectbox("Select Surface:", options=['Dirt', 'Turf'])
 surface_value = surface  # Assigning surface to surface_value for clarity
 
 # Condition selection
-condition = st.radio("Select Condition:", options=['Sloppy', 'Soft', 'Yielding', 'Good', 'Fast'])
+condition = st.selectbox("Select Condition:", options=['Sloppy', 'Soft', 'Yielding', 'Good', 'Fast'])
 cond_range_map = {'Sloppy': 0.0, 'Soft': 0.25, 'Yielding': 0.5, 'Good': 0.75, 'Fast': 1.0}
 cond_range = cond_range_map[condition]
 
 # Distance selection
-distance = st.radio("Select Race Distance:", options=list(range(4, 13)))
+distance = st.selectbox("Select Race Distance:", options=list(range(4, 13)))
 
 # Input finish time
 fin_time = st.number_input("Enter Finish Time (seconds):", min_value=0.0, step=0.01)
