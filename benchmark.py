@@ -4,12 +4,8 @@ import pandas as pd
 # Step 1: Load the summary data
 lookup_table = pd.read_csv("lookup_table.csv")
 
-# Step 2: Header
-st.title("PFL Horse Racing Benchmark Finder")
-
-st.subheader("Input your data")
-st.write("Select the conditions of a previous race and your horse's finish time to see how good it was.")
-
+# Step 2: Streamlit App
+st.title("Horse Racing Performance Evaluation")
 
 # Grade selection
 grade = st.radio("Select Grade:", options=['A-', 'A', 'A+', 'S-', 'S', 'S+', 'SS-'])
@@ -20,6 +16,7 @@ direction_value = f"{direction}Turning"
 
 # Surface selection
 surface = st.radio("Select Surface:", options=['Dirt', 'Turf'])
+surface_value = surface  # Assigning surface to surface_value for clarity
 
 # Condition selection
 condition = st.radio("Select Condition:", options=['Sloppy', 'Soft', 'Yielding', 'Good', 'Fast'])
