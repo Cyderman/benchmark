@@ -57,13 +57,13 @@ if fin_time > 0:
 
     if not results.empty:
         # Display results
-        st.subheader("Evaluation Results")
+        st.subheader("Evaluation Results: Your time was good enough for...")
         for _, row in results.iterrows():
             st.write(f"Race Type: {row['race_type']}")
             st.markdown(
-                f"- Win Benchmark: {'✅' if row['fast_enough_to_win'] else '❌'}")
+                f"- Win: {'✅' if row['fast_enough_to_win'] else '❌'}")
             st.markdown(
-                f"- Podium Benchmark: {'✅' if row['fast_enough_to_place'] else '❌'}")
+                f"- Podium: {'✅' if row['fast_enough_to_place'] else '❌'}")
     else:
         st.warning("No matching benchmarks found. Please check your input parameters.")
 else:
