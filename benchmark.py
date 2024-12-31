@@ -5,7 +5,7 @@ import pandas as pd
 lookup_table = pd.read_csv("lookup_table.csv")
 
 # Step 2: Streamlit App
-st.title("Horse Racing Performance Evaluation")
+st.title("Enter the details of a previous run")
 
 # Grade selection
 grade = st.selectbox("Select Grade:", options=['A-', 'A', 'A+', 'S-', 'S', 'S+', 'SS-'])
