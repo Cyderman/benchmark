@@ -5,7 +5,11 @@ import pandas as pd
 lookup_table = pd.read_csv("lookup_table.csv")
 
 # Step 2: Streamlit App
-st.title("Horse Racing Performance Evaluation")
+st.title("PFL Horse Racing Performance Evaluation")
+
+st.subheader("Input your data")
+st.write("Select the conditions of a previous race and your horse's finish time to see how good it was.")
+
 
 # Grade selection
 grade = st.radio("Select Grade:", options=['A-', 'A', 'A+', 'S-', 'S', 'S+', 'SS-'])
